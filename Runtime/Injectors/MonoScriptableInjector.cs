@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace com.liteninja.di.Core.DI
+namespace com.liteninja.di
 {
     public class MonoScriptableInjector : MonoBehaviour
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace com.liteninja.di.Core.DI
+namespace com.liteninja.di
 {
     
     public class CachedReflector : IReflector

@@ -1,4 +1,4 @@
-namespace com.liteninja.di.Core.DI
+namespace com.liteninja.di
 {
     public interface IInjector
     {

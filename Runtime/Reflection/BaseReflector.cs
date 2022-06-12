@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using com.liteninja.di.Core.DI.Attributes;
+using om.liteninja.di.attributes;
 
-namespace com.liteninja.di.Core.DI
+namespace com.liteninja.di
 {
     /// <summary>
     /// Utility class to extract fields and properties marked with [Inject] Attribute

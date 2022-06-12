@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace com.liteninja.di.Core.DI
+namespace com.liteninja.di
 {
     public interface IReflector
     {

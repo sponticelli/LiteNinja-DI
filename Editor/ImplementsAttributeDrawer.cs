@@ -1,4 +1,4 @@
-using com.liteninja.di.Core.DI.Attributes;
+using com.liteninja.di.attributes;
 using UnityEditor;
 using UnityEngine;
 

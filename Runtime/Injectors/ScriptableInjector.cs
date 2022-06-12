@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace com.liteninja.di.Core.DI
+namespace com.liteninja.di
 {
     [CreateAssetMenu(menuName = "LiteNinja/DI/ScriptableInjector", fileName = "ScriptableInjector", order = 0)]
     public class ScriptableInjector : ScriptableObject, IInjector
