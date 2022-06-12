@@ -1,0 +1,16 @@
+{
+    "name": "com.liteninja.di.editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:695739028fdd54381b504310b2d94d73"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
