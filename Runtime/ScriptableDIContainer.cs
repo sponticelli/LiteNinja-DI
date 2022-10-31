@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace com.liteninja.di
+namespace LiteNinja.DI
 {
     [CreateAssetMenu(menuName = "LiteNinja/DI/ScriptableDIContainer", fileName = "ScriptableDIContainer", order = 0)]
     public class ScriptableDIContainer : ScriptableObject, IDIContainer

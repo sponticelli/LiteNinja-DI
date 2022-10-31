@@ -1,8 +1,8 @@
-using com.liteninja.di.attributes;
+using LiteNinja.DI.attributes;
 using UnityEditor;
 using UnityEngine;
 
-namespace com.liteninja.di.editor
+namespace LiteNinja.DI.Editor
 {
     [CustomPropertyDrawer(typeof(ImplementsAttribute))]
     public class ImplementsAttributeDrawer : PropertyDrawer

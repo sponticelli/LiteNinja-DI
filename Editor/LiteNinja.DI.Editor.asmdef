@@ -1,10 +1,12 @@
 {
-    "name": "com.liteninja.di.editor",
+    "name": "LiteNinja.DI.Editor",
     "rootNamespace": "",
     "references": [
-        "GUID:695739028fdd54381b504310b2d94d73"
+        "LiteNinja.DI"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

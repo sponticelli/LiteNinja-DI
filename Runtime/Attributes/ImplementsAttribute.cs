@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace com.liteninja.di.attributes
+namespace LiteNinja.DI.attributes
 {
     public class ImplementsAttribute : PropertyAttribute {
         public Type InterfaceType { get; }

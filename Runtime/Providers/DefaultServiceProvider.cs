@@ -1,6 +1,6 @@
 using System;
 
-namespace com.liteninja.di
+namespace LiteNinja.DI
 {
     public class DefaultServiceProvider<T> : IServiceProvider<T> where T : class
     {

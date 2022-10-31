@@ -1,9 +1,7 @@
 {
-    "name": "com.liteninja.di",
+    "name": "LiteNinja.DI",
     "rootNamespace": "",
-    "references": [
-        "GUID:9a9ef198d65ed438b94bff7d160afb89"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

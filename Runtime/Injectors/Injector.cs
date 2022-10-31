@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace com.liteninja.di
+namespace LiteNinja.DI
 {
     public class Injector : IInjector
     {
@@ -11,12 +11,18 @@ namespace com.liteninja.di
         private readonly Dictionary<Type, MethodInfo> _getGenericMethods;
         private readonly IDIContainer _diContainer;
 
-        public Injector(IDIContainer diContainer = null, IReflector reflector = null)
+        public Injector(IDIContainer diContainer = null, IReflector reflector = null, bool bindToSelf = false)
         {
             _diContainer = diContainer ?? new DIContainer();
             _reflector = reflector ?? new CachedReflector();
             _getGenericMethods = new Dictionary<Type, MethodInfo>();
             _getMethodInfo = typeof(IDIContainer).GetMethod("Get");
+            
+            //If _diContainer as no binding for IInjector, then add it
+            if ( bindToSelf && (!_diContainer.Exists<IInjector>()))
+            {
+                _diContainer.BindInstance(this);
+            }
         }
 
         public void Inject(object obj)

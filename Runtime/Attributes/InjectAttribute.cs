@@ -1,6 +1,6 @@
 using System;
 
-namespace om.liteninja.di.attributes
+namespace LiteNinja.DI.Attributes
 {
     [AttributeUsage( AttributeTargets.Field )]
     public sealed class InjectAttribute : Attribute

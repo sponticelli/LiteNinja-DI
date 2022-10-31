@@ -1,20 +1,40 @@
-using System;
 using UnityEngine;
 
-namespace com.liteninja.di
+namespace LiteNinja.DI
 {
     public class MonoScriptableInjector : MonoBehaviour
     {
         [SerializeField] private ScriptableInjector _injector;
         [SerializeField] private bool _injectChildren;
+        [SerializeField] private bool _injectOnAwake;
+        [SerializeField] private bool _injectOnEnable;
+        [SerializeField] private bool _injectOnStart;
+        
+        private Component[] _components;
         
         private void Awake()
         {
-            var components = _injectChildren
+            _components = _injectChildren
                 ? GetComponentsInChildren(typeof(Component))
                 : GetComponents(typeof(Component));
 
-            foreach (var component in components)
+            if (_injectOnAwake) Inject();
+        }
+        
+        private void OnEnable()
+        {
+            if (_injectOnEnable) Inject();
+        }
+        
+        private void Start()
+        {
+            if (_injectOnStart) Inject();
+        }
+
+
+        public void Inject()
+        {
+            foreach (var component in _components)
             {
                 _injector.Inject(component);
             }
