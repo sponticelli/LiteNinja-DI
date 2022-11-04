@@ -1,6 +1,6 @@
 {
   "name": "com.liteninja.di",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "displayName": "LiteNinja DI",
   "description": "A Dependency Injection Library for Unity3D",
   "unity": "2021.1",

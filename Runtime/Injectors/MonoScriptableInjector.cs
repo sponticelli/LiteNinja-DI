@@ -6,6 +6,7 @@ namespace LiteNinja.DI
     {
         [SerializeField] private ScriptableInjector _injector;
         [SerializeField] private bool _injectChildren;
+        [SerializeField] private bool _includInactives = true;
         [SerializeField] private bool _injectOnAwake;
         [SerializeField] private bool _injectOnEnable;
         [SerializeField] private bool _injectOnStart;
@@ -15,7 +16,7 @@ namespace LiteNinja.DI
         private void Awake()
         {
             _components = _injectChildren
-                ? GetComponentsInChildren(typeof(Component))
+                ? GetComponentsInChildren(typeof(Component), _includInactives)
                 : GetComponents(typeof(Component));
 
             if (_injectOnAwake) Inject();
