@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace LiteNinja.DI
@@ -13,6 +14,8 @@ namespace LiteNinja.DI
         
         private Component[] _components;
         
+        private bool _isDestroyed;
+        
         private void Awake()
         {
             _components = _injectChildren
@@ -21,7 +24,12 @@ namespace LiteNinja.DI
 
             if (_injectOnAwake) Inject();
         }
-        
+
+        private void OnDestroy()
+        {
+            _isDestroyed = true;
+        }
+
         private void OnEnable()
         {
             if (_injectOnEnable) Inject();
@@ -35,6 +43,7 @@ namespace LiteNinja.DI
 
         public void Inject()
         {
+            _isDestroyed = false;
             foreach (var component in _components)
             {
                 _injector.Inject(component);
