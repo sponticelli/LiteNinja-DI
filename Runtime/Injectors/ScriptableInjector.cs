@@ -7,7 +7,8 @@ namespace LiteNinja.DI
     public class ScriptableInjector : ScriptableObject, IInjector
     {
         [SerializeField] private ScriptableDIContainer _container;
-                
+        [SerializeField] private bool _throwOnMissing = true;
+
         [NonSerialized] private IInjector _injector;
         [NonSerialized] private bool initialized;
 
@@ -15,7 +16,7 @@ namespace LiteNinja.DI
         {
             if (!initialized)
             {
-                _injector = new Injector(_container?.Container, bindToSelf: true);
+                _injector = new Injector(_container?.Container, bindToSelf: true, useGetIfBound: !_throwOnMissing);
                 initialized = true;
             }
             _injector.Inject(obj);

@@ -11,12 +11,12 @@ namespace LiteNinja.DI
         private readonly Dictionary<Type, MethodInfo> _getGenericMethods;
         private readonly IDIContainer _diContainer;
 
-        public Injector(IDIContainer diContainer = null, IReflector reflector = null, bool bindToSelf = false)
+        public Injector(IDIContainer diContainer = null, IReflector reflector = null, bool bindToSelf = false, bool useGetIfBound = false)
         {
             _diContainer = diContainer ?? new DIContainer();
             _reflector = reflector ?? new CachedReflector();
             _getGenericMethods = new Dictionary<Type, MethodInfo>();
-            _getMethodInfo = typeof(IDIContainer).GetMethod("Get");
+            _getMethodInfo = typeof(IDIContainer).GetMethod(useGetIfBound ? "GetIfBound" : "Get");
             
             //If _diContainer as no binding for IInjector, then add it
             if ( bindToSelf && (!_diContainer.Exists<IInjector>()))
